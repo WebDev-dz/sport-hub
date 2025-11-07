@@ -1,3 +1,4 @@
+"use client"
 // [org]/settings/error.tsx
 import React from 'react'
 

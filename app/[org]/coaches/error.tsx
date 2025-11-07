@@ -1,5 +1,5 @@
-// [org]/coaches/error.tsx
 "use client"
+// [org]/coaches/error.tsx
 import React from 'react'
 
 type Props = {}

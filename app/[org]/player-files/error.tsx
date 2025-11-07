@@ -1,3 +1,4 @@
+"use client"
 // [org]/player-files/error.tsx
 import React from 'react'
 
