@@ -47,7 +47,7 @@ export const client = createAuthClient({
 		onError(e) {
 			console.error(e);
 			if (e.error.status === 429) {
-				toast.error("Too many requests. Please try again later.");
+				toast.error("عدة محاولات كبيرة للدخول بشكل متكرر. يرجى المحاولة لاحقا مرة أخرى.");
 			}
 		
 		},

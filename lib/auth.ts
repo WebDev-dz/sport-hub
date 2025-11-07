@@ -28,6 +28,14 @@ import { stripeClient } from "@better-auth/stripe/client";
 
 const from = process.env.BETTER_AUTH_EMAIL || "delivered@resend.dev";
 const to = process.env.TEST_EMAIL || "";
+const baseURL: string | undefined =
+  process.env.VERCEL === "1"
+    ? process.env.VERCEL_ENV === "production"
+      ? process.env.BETTER_AUTH_URL
+      : process.env.VERCEL_ENV === "preview"
+        ? `https://${process.env.VERCEL_URL}`
+        : undefined
+    : undefined;
 
 const dialect = (() => {
   if (process.env.USE_MYSQL) {
@@ -52,15 +60,8 @@ if (!dialect) {
   throw new Error("No dialect found");
 }
 
-const baseURL: string | undefined =
-  process.env.VERCEL === "1"
-    ? process.env.VERCEL_ENV === "production"
-      ? process.env.BETTER_AUTH_URL
-      : process.env.VERCEL_ENV === "preview"
-        ? `https://${process.env.VERCEL_URL}`
-        : undefined
-    : undefined;
 
+console.log({baseURL});
 const cookieDomain: string | undefined =
   process.env.VERCEL === "1"
     ? process.env.VERCEL_ENV === "production"
@@ -155,7 +156,7 @@ export const auth = betterAuth({
             teamName: data.organization.name,
             inviteLink:
               process.env.NODE_ENV === "development"
-                ? `http://localhost:3000/accept-invitation/${data.id}`
+                ? `${baseURL}/accept-invitation/${data.id}`
                 : `${
                     process.env.BETTER_AUTH_URL ||
                     "https://demo.better-auth.com"
@@ -234,7 +235,7 @@ export const auth = betterAuth({
     sso({
       defaultSSO: [
         {
-          domain: "http://localhost:3000",
+          domain: baseURL || "http://localhost:3000",
           providerId: "sso",
           samlConfig: {
             issuer: "http://localhost:3000/api/auth/sso/saml2/sp/metadata",
