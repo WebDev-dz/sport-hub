@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Better Auth Demo App
 
 Welcome to the Better Auth demo app! This project is built with [Next.js](https://nextjs.org) using [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
@@ -83,3 +84,7 @@ Here are some helpful links if you want to dive deeper:
 If you run into issues or have suggestions, feel free to open an issue or submit a pull request on the [GitHub repo](https://github.com/better-auth/better-auth).
 
 Happy coding!
+=======
+# sport-hub
+نظام إدارة الرياضة هو تطبيق ويب كامل يساعد الأندية والمدربين في تنظيم الفرق، اللاعبين، جلسات التدريب، والحضور. مبني على Next.js، Prisma، وTurso لقاعدة بيانات آمنة. يدعم المصادقة عبر Better Auth، مع ميزات مثل الدعوات والاشتراكات. يوفر عمليات CRUD متقدمة وتحديثات فورية.
+>>>>>>> 78bb8d6b3d6c27d8a896203f548f14e440fccdf0
