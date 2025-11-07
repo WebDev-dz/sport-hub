@@ -1,0 +1,506 @@
+[
+  {
+      
+      "id": "7056d60b-5f92-426b-a73b-18880eb0873d",
+      "date": "2025-10-28T00:00:00",
+      "startTime": "16:00",
+      "endTime": "17:30",
+      "description": "Handball fast break drills - Session 1",
+      "location": "Main Stadium Field B",
+      "createdAt": "2025-10-23T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "e5b865a8-0871-4dcf-ac47-398fbce70428",
+      "date": "2025-11-24T00:00:00",
+      "startTime": "16:00",
+      "endTime": "18:00",
+      "description": "Handball goalie training - Session 10",
+      "location": "Indoor Gym Hall 2",
+      "createdAt": "2025-11-19T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "76ea3b1f-8fb4-45c8-a1fb-2b40b82c0366",
+      "date": "2025-12-03T00:00:00",
+      "startTime": "16:00",
+      "endTime": "18:00",
+      "description": "Handball physical conditioning - Session 13",
+      "location": "Main Stadium Field B",
+      "createdAt": "2025-12-02T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "60d39e9b-6551-4e7d-9e5b-d1e0ddb9b67f",
+      "date": "2025-12-06T00:00:00",
+      "startTime": "19:00",
+      "endTime": "21:00",
+      "description": "Handball physical conditioning - Session 14",
+      "location": "Indoor Gym Hall 1",
+      "createdAt": "2025-12-01T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "5a11795c-f875-470e-ae39-738ee8f4e218",
+      "date": "2026-01-05T00:00:00",
+      "startTime": "15:00",
+      "endTime": "16:30",
+      "description": "Handball team game - Session 24",
+      "location": "Indoor Gym Hall 1",
+      "createdAt": "2026-01-03T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "43b91768-aee1-44a2-b16b-24f5b3b208fa",
+      "date": "2026-02-01T00:00:00",
+      "startTime": "18:00",
+      "endTime": "20:00",
+      "description": "Handball goalie training - Session 33",
+      "location": "Main Stadium Field A",
+      "createdAt": "2026-01-27T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "c8927df7-f12d-47d0-b2ae-dd62daf7f88e",
+      "date": "2026-02-04T00:00:00",
+      "startTime": "18:00",
+      "endTime": "19:00",
+      "description": "Handball team game - Session 34",
+      "location": "Fitness Center",
+      "createdAt": "2026-01-30T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "555a0827-41be-4e0e-a4a4-40f97188d6f0",
+      "date": "2026-02-25T00:00:00",
+      "startTime": "15:30",
+      "endTime": "16:30",
+      "description": "Handball passing and catching - Session 41",
+      "location": "Outdoor Track",
+      "createdAt": "2026-02-18T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "fa330159-d6b9-49ff-931e-b2a054eb2ff8",
+      "date": "2026-03-21T00:00:00",
+      "startTime": "18:30",
+      "endTime": "20:30",
+      "description": "Handball goalie training - Session 49",
+      "location": "Indoor Gym Hall 1",
+      "createdAt": "2026-03-15T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "e2f7064b-3cf5-475c-9a41-93e8bce43b8c",
+      "date": "2025-10-31T00:00:00",
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "description": "Football goalkeeping session - Session 2",
+      "location": "Main Stadium Field A",
+      "createdAt": "2025-10-26T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "cf5c1023-38f2-4e42-bd0d-a1b27a095599",
+      "date": "2025-11-09T00:00:00",
+      "startTime": "17:30",
+      "endTime": "19:30",
+      "description": "Football tactical drills - Session 5",
+      "location": "Multipurpose Court",
+      "createdAt": "2025-11-04T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "3636b7df-c4bd-4cf0-99f3-11ba70c59e51",
+      "date": "2025-12-21T00:00:00",
+      "startTime": "17:30",
+      "endTime": "18:30",
+      "description": "Football goalkeeping session - Session 19",
+      "location": "Main Stadium Field A",
+      "createdAt": "2025-12-19T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "63fc386a-4250-48c7-8480-848916c8182d",
+      "date": "2025-12-24T00:00:00",
+      "startTime": "19:00",
+      "endTime": "20:00",
+      "description": "Football fitness and conditioning - Session 20",
+      "location": "Indoor Gym Hall 2",
+      "createdAt": "2025-12-22T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "d97d782d-4dea-44e8-a302-ee6d6a96a0a7",
+      "date": "2026-01-20T00:00:00",
+      "startTime": "16:00",
+      "endTime": "17:00",
+      "description": "Football match simulation - Session 29",
+      "location": "Multipurpose Court",
+      "createdAt": "2026-01-13T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "a2ce67f3-648c-4613-ac8c-ed33816ab864",
+      "date": "2026-01-26T00:00:00",
+      "startTime": "16:30",
+      "endTime": "18:00",
+      "description": "Football fitness and conditioning - Session 31",
+      "location": "Indoor Gym Hall 1",
+      "createdAt": "2026-01-22T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "69855cab-20a4-418e-bf0b-7922a70b63e1",
+      "date": "2026-02-13T00:00:00",
+      "startTime": "14:00",
+      "endTime": "16:00",
+      "description": "Football match simulation - Session 37",
+      "location": "Main Stadium Field A",
+      "createdAt": "2026-02-08T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "60f149d1-94ef-46e1-8048-62db648b5522",
+      "date": "2026-02-28T00:00:00",
+      "startTime": "19:00",
+      "endTime": "20:30",
+      "description": "Football technical training - dribbling and passing - Session 42",
+      "location": "Outdoor Track",
+      "createdAt": "2026-02-27T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "c2efa979-94c5-48fd-9f56-07ae2c12fa4d",
+      "date": "2025-11-03T00:00:00",
+      "startTime": "15:30",
+      "endTime": "17:00",
+      "description": "Athletics long jump practice - Session 3",
+      "location": "Main Stadium Field B",
+      "createdAt": "2025-11-01T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "067e616b-38ed-4113-a04e-3927cbdfc25b",
+      "date": "2025-11-12T00:00:00",
+      "startTime": "14:30",
+      "endTime": "15:30",
+      "description": "Athletics hurdles workshop - Session 6",
+      "location": "Outdoor Track",
+      "createdAt": "2025-11-05T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    
+    {
+      "id": "336a0c02-cafb-4665-9e4f-d4a84bf18b66",
+      "date": "2025-11-27T00:00:00",
+      "startTime": "19:00",
+      "endTime": "21:00",
+      "description": "Athletics strength training - Session 11",
+      "location": "Fitness Center",
+      "createdAt": "2025-11-21T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "749a03bc-2553-4a82-aa54-7476b522d0ac",
+      "date": "2025-12-09T00:00:00",
+      "startTime": "14:30",
+      "endTime": "16:00",
+      "description": "Athletics endurance run - Session 15",
+      "location": "Fitness Center",
+      "createdAt": "2025-12-06T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "f2e75ca8-8b9b-4f86-9f92-f09da275894c",
+      "date": "2026-01-02T00:00:00",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "description": "Athletics endurance run - Session 23",
+      "location": "Indoor Gym Hall 2",
+      "createdAt": "2025-12-28T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "3f989d7c-253c-477d-8c75-bcae83c7a819",
+      "date": "2026-01-11T00:00:00",
+      "startTime": "19:30",
+      "endTime": "20:30",
+      "description": "Athletics strength training - Session 26",
+      "location": "Main Stadium Field A",
+      "createdAt": "2026-01-07T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "2d2086c3-219b-460d-a97d-3fdb90793acb",
+      "date": "2026-01-14T00:00:00",
+      "startTime": "16:30",
+      "endTime": "18:00",
+      "description": "Athletics strength training - Session 27",
+      "location": "Indoor Gym Hall 1",
+      "createdAt": "2026-01-08T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "98465d3f-5e95-4358-bf79-27340b1290e4",
+      "date": "2026-01-29T00:00:00",
+      "startTime": "18:00",
+      "endTime": "20:00",
+      "description": "Athletics long jump practice - Session 32",
+      "location": "Main Stadium Field A",
+      "createdAt": "2026-01-26T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "ff48a14f-83a2-4279-85ce-cb6dc44387ab",
+      "date": "2026-02-10T00:00:00",
+      "startTime": "15:30",
+      "endTime": "16:30",
+      "description": "Athletics endurance run - Session 36",
+      "location": "Main Stadium Field B",
+      "createdAt": "2026-02-05T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "5baa06ca-e907-4cbd-93d9-19655ba015e1",
+      "date": "2026-02-19T00:00:00",
+      "startTime": "17:30",
+      "endTime": "19:30",
+      "description": "Athletics long jump practice - Session 39",
+      "location": "Indoor Gym Hall 1",
+      "createdAt": "2026-02-18T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "6cac8580-dcff-4286-92d5-e7f2dde6304d",
+      "date": "2026-03-03T00:00:00",
+      "startTime": "16:30",
+      "endTime": "18:00",
+      "description": "Athletics sprint training - Session 43",
+      "location": "Indoor Gym Hall 2",
+      "createdAt": "2026-02-28T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "a86a5e49-6f4d-413b-9e02-09186973d682",
+      "date": "2026-03-18T00:00:00",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "description": "Athletics hurdles workshop - Session 48",
+      "location": "Indoor Gym Hall 1",
+      "createdAt": "2026-03-11T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "843f7469-9c8f-4005-a0df-3e2bd0dd0a81",
+      "date": "2025-11-06T00:00:00",
+      "startTime": "16:00",
+      "endTime": "17:30",
+      "description": "Basketball ball handling - Session 4",
+      "location": "Main Stadium Field A",
+      "createdAt": "2025-10-30T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "8567695f-d062-42f0-ad46-2dde2ad70912",
+      "date": "2025-11-18T00:00:00",
+      "startTime": "17:30",
+      "endTime": "19:00",
+      "description": "Basketball shooting drills - Session 8",
+      "location": "Fitness Center",
+      "createdAt": "2025-11-12T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "62978c4c-cb32-4ee5-ad4e-f68e82fb3676",
+      "date": "2025-11-21T00:00:00",
+      "startTime": "16:30",
+      "endTime": "18:30",
+      "description": "Basketball free throw contest - Session 9",
+      "location": "Main Stadium Field A",
+      "createdAt": "2025-11-16T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "cfab6b53-ade9-4d54-b644-77f9dc99e3fd",
+      "date": "2025-11-30T00:00:00",
+      "startTime": "17:30",
+      "endTime": "19:30",
+      "description": "Basketball free throw contest - Session 12",
+      "location": "Main Stadium Field A",
+      "createdAt": "2025-11-28T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "24a92212-bff1-4186-a9aa-6036de29b56e",
+      "date": "2025-12-12T00:00:00",
+      "startTime": "15:30",
+      "endTime": "16:30",
+      "description": "Basketball free throw contest - Session 16",
+      "location": "Indoor Gym Hall 2",
+      "createdAt": "2025-12-07T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "6e8c31c3-2ea6-4f87-ba85-7c18756ccfb9",
+      "date": "2025-12-18T00:00:00",
+      "startTime": "15:00",
+      "endTime": "16:30",
+      "description": "Basketball defensive strategies - Session 18",
+      "location": "Indoor Gym Hall 1",
+      "createdAt": "2025-12-14T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "a517d1ab-28f2-4981-beba-63f3c24528c4",
+      "date": "2025-11-15T00:00:00",
+      "startTime": "17:00",
+      "endTime": "18:00",
+      "description": "Volleyball spiking drills - Session 7",
+      "location": "Fitness Center",
+      "createdAt": "2025-11-09T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "e42cfa72-3fb8-4e58-80eb-c1c75316f834",
+      "date": "2025-12-15T00:00:00",
+      "startTime": "16:00",
+      "endTime": "17:00",
+      "description": "Volleyball blocking techniques - Session 17",
+      "location": "Multipurpose Court",
+      "createdAt": "2025-12-09T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "c1bbc8f6-c561-436f-995a-795738665cb4",
+      "date": "2025-12-27T00:00:00",
+      "startTime": "19:30",
+      "endTime": "21:30",
+      "description": "Volleyball serving practice - Session 21",
+      "location": "Outdoor Track",
+      "createdAt": "2025-12-21T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "042db67e-6e29-4ff2-bc41-c400cf65b3c5",
+      "date": "2025-12-30T00:00:00",
+      "startTime": "15:00",
+      "endTime": "16:00",
+      "description": "Basketball shooting drills - Session 22",
+      "location": "Outdoor Track",
+      "createdAt": "2025-12-24T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "2a8cd4e6-e2ff-4af8-abfb-d0a8fd5619c2",
+      "date": "2026-01-23T00:00:00",
+      "startTime": "14:00",
+      "endTime": "15:30",
+      "description": "Basketball free throw contest - Session 30",
+      "location": "Fitness Center",
+      "createdAt": "2026-01-16T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    
+    {
+      "id": "70e16c34-89d2-463c-87a2-4c4a67b80299",
+      "date": "2026-02-07T00:00:00",
+      "startTime": "17:30",
+      "endTime": "19:30",
+      "description": "Basketball free throw contest - Session 35",
+      "location": "Indoor Gym Hall 1",
+      "createdAt": "2026-01-31T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "af27e718-e537-4bcb-bbf7-183fdae24a35",
+      "date": "2026-02-16T00:00:00",
+      "startTime": "14:00",
+      "endTime": "15:30",
+      "description": "Basketball ball handling - Session 38",
+      "location": "Multipurpose Court",
+      "createdAt": "2026-02-09T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "aa47ac2a-f07f-4d18-9578-d57ef95fd48a",
+      "date": "2026-03-06T00:00:00",
+      "startTime": "17:00",
+      "endTime": "18:30",
+      "description": "Basketball free throw contest - Session 44",
+      "location": "Indoor Gym Hall 2",
+      "createdAt": "2026-02-28T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "695dd355-272b-4913-885c-4a9778b34861",
+      "date": "2026-03-12T00:00:00",
+      "startTime": "18:00",
+      "endTime": "19:30",
+      "description": "Basketball defensive strategies - Session 46",
+      "location": "Indoor Gym Hall 2",
+      "createdAt": "2026-03-07T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    
+    {
+      "id": "de3ed84f-4f3c-41f7-a2fb-d2d063cfa79d",
+      "date": "2026-01-08T00:00:00",
+      "startTime": "15:30",
+      "endTime": "17:00",
+      "description": "Volleyball blocking techniques - Session 25",
+      "location": "Indoor Gym Hall 2",
+      "createdAt": "2026-01-04T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "9c7c8d1a-eac4-405d-90be-e390797a2a9d",
+      "date": "2026-01-17T00:00:00",
+      "startTime": "16:30",
+      "endTime": "18:00",
+      "description": "Volleyball team scrimmage - Session 28",
+      "location": "Outdoor Track",
+      "createdAt": "2026-01-10T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "183861f0-b360-4c0d-afa4-af5d6ad7d432",
+      "date": "2026-02-22T00:00:00",
+      "startTime": "16:30",
+      "endTime": "17:30",
+      "description": "Volleyball team scrimmage - Session 40",
+      "location": "Fitness Center",
+      "createdAt": "2026-02-20T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "13092566-7b49-41fa-99b6-4d13f0c95214",
+      "date": "2026-03-09T00:00:00",
+      "startTime": "18:30",
+      "endTime": "19:30",
+      "description": "Volleyball team scrimmage - Session 45",
+      "location": "Indoor Gym Hall 2",
+      "createdAt": "2026-03-04T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "74a1d6a8-0c75-47de-a47f-97af07702522",
+      "date": "2026-03-15T00:00:00",
+      "startTime": "15:00",
+      "endTime": "16:30",
+      "description": "Volleyball team scrimmage - Session 47",
+      "location": "Outdoor Track",
+      "createdAt": "2026-03-13T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    },
+    {
+      "id": "66e4d1d3-01dd-4197-81da-5cf9a5e22d45",
+      "date": "2026-03-24T00:00:00",
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "description": "Volleyball agility training - Session 50",
+      "location": "Main Stadium Field B",
+      "createdAt": "2026-03-17T00:00:00",
+      "organizationId": "Qkxv45xXydJNAevazR2kURZMMuaGp9Ni"
+    }
+  ]
