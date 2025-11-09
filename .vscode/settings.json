@@ -10,7 +10,7 @@
         "postcss.config.mjs": true,
         // "package.json": true,
         "package-lock.json": true,
-        "next.config.ts": true,
+        // "next.config.ts": true,
         "next-env.d.ts": true,
         "migration.sql": true,
         // "components.json": true,
