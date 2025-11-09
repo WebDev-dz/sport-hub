@@ -19,6 +19,7 @@ const adapter = new PrismaLibSQL(libsqlClient)
 export const prisma = globalForPrisma.prisma ?? new PrismaClient({ 
   adapter,
   // Ensure we're not trying to use binary engines
+  // @ts-ignore
   __internal: {
     engine: {
       // This forces use of the JS engine
