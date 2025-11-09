@@ -6,16 +6,26 @@ const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined
 }
 
-const client = createClient({
+// Create the libSQL client
+const libsqlClient = createClient({
   url: process.env.DATABASE_URL!,
-  // syncUrl: process.env.DATABASE_SYNC_URL!,
   authToken: process.env.TURSO_AUTH_TOKEN!,
-  
 })
 
-const adapter = new PrismaLibSQL(client)
+// Create the adapter
+const adapter = new PrismaLibSQL(libsqlClient)
 
-export const prisma = globalForPrisma.prisma ?? new PrismaClient({ adapter })
+// Initialize Prisma Client with the adapter
+export const prisma = globalForPrisma.prisma ?? new PrismaClient({ 
+  adapter,
+  // Ensure we're not trying to use binary engines
+  __internal: {
+    engine: {
+      // This forces use of the JS engine
+      cwd: undefined,
+    }
+  }
+})
 
 if (process.env.NODE_ENV !== 'production') {
   globalForPrisma.prisma = prisma
