@@ -13,6 +13,8 @@ type Props = {
     }
 }
 
+export const runtime = 'edge' // Force edge runtime
+
 const HomePage: React.FC<Props> = async ({ params }) => {
     const { org } = await params;
 
