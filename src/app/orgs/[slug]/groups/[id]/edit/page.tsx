@@ -3,10 +3,10 @@ import EditGroupView from './view'
 import prisma from '@/lib/prisma';
 
 type Props = {
-  params: {
+  params: Promise<{
     org: string
     id: string
-  }
+  }>
 }
 
 const GroupEditPage = async ({ params }: Props) => {
