@@ -24,13 +24,13 @@ type Props = {
   params: Promise<{
     org: string;
   }>;
-  searchParams: {
+  searchParams: Promise<{
     search?: string;
     view?: TCalendarView;
     date?: string; // Current date being viewed (YYYY-MM-DD)
     month?: string; // For month view (YYYY-MM)
     week?: string; // For week view (YYYY-Www) ISO week format
-  };
+  }>;
 };
 
 const SessionsPage: React.FC<Props> = async ({ params, searchParams }) => {

@@ -44,16 +44,16 @@ type Props = {
   params: Promise<{
     org: string;
   }>;
-  searchParams: {
+  searchParams: Promise<{
     page: string;
     limit: string;
     search: string;
-  };
+  }>;
 };
 
 const PlayersPage: React.FC<Props> = async ({ params, searchParams }) => {
   const { org } = await params;
-  const { page = "1", limit = "10", search = "" } = searchParams;
+  const { page = "1", limit = "10", search = "" } = await searchParams;
 
   const session = await auth();
   if (!session) {

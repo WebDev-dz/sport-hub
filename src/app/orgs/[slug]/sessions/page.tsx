@@ -40,11 +40,11 @@ type Props = {
     params: Promise<{
         org: string
     }>,
-    searchParams: {
+    searchParams: Promise<{
         page: string
         limit: string
         search: string
-    }
+    }>
 }
 
 const SessionsPage: React.FC<Props> = async ({ params, searchParams }) => {
