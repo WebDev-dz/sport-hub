@@ -48,7 +48,7 @@ type Props = {
   organization: any;
 };
 
-const AttendanceCheckInView: React.FC<Props> = async ({
+const AttendanceCheckInView: React.FC<Props> =  ({
   sessionsWithMembers,
   organization,
 }) => {
