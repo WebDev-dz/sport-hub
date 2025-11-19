@@ -1,0 +1,283 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Better Auth core models (adapted for Turso)
+
+model user {
+  id                String    @id @default(uuid())
+  name              String
+  email             String    @unique
+  emailVerified     Boolean
+  image             String?
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @default(now())
+  twoFactorEnabled  Boolean?
+  role              String?
+  banned            Boolean?
+  banReason         String?
+  banExpires        String?
+  stripeCustomerId  String?
+  sessions          session[]
+  accounts          account[]
+  members           member[]
+  invitations       invitation[] @relation("inviter")
+  twoFactors        twoFactor[]
+  passkeys          passkey[]
+  ssoProviders      ssoProvider[]
+  deviceCodes       deviceCode[]
+  groups            group[]      @relation("coach")
+}
+
+model session {
+  id                    String   @id @default(uuid())
+  expiresAt             String
+  token                 String   @unique
+  createdAt             DateTime    @default(now())
+  updatedAt             DateTime    @default(now())
+  ipAddress             String?
+  userAgent             String?
+  userId                String
+  activeOrganizationId  String?
+  impersonatedBy        String?
+
+  user                  user     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model account {
+  id                       String    @id @default(uuid())
+  accountId                String
+  providerId               String
+  userId                   String
+  accessToken              String?
+  refreshToken             String?
+  idToken                  String?
+  accessTokenExpiresAt     String?
+  refreshTokenExpiresAt    String?
+  scope                    String?
+  password                 String?
+  createdAt                DateTime    @default(now())
+  updatedAt                DateTime    @default(now())
+
+  user                     user      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model verification {
+  id          String   @id @default(uuid())
+  identifier  String
+  value       String
+  expiresAt   String
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @default(now())
+}
+
+model organization {
+  id        String   @id @default(uuid())
+  name      String
+  slug      String   @unique
+  logo      String?
+  createdAt DateTime   @default(now())
+  metadata  String?
+  members       member[]
+  invitations   invitation[]
+  ssoProviders  ssoProvider[]
+  subscriptions subscription[]
+  sportsMembers sports_member[]
+  training_sessions training_session[]
+  groups group[] @relation("organization")
+}
+
+model member {
+  id            String   @id @default(uuid())
+  organizationId String
+  userId        String
+  role          String
+  createdAt     DateTime    @default(now())
+
+  organization  organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user          user         @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model invitation {
+  id            String   @id @default(uuid())
+  organizationId String
+  email         String
+  role          String?
+  status        String
+  expiresAt     String
+  inviterId     String
+
+  organization  organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  inviter       user         @relation("inviter", fields: [inviterId], references: [id], onDelete: Cascade)
+}
+
+model twoFactor {
+  id          String   @id @default(uuid())
+  secret      String
+  backupCodes String
+  userId      String
+
+  user        user     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model passkey {
+  id           String    @id @default(uuid())
+  name         String?
+  publicKey    String
+  userId       String
+  credentialID String
+  counter      Int
+  deviceType   String
+  backedUp     Boolean
+  transports   String?
+  createdAt    DateTime?   @default(now())
+  aaguid       String?
+
+  user         user      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model subscription {
+  id                   String    @id @default(uuid())
+  plan                 String
+  referenceId          String
+  stripeCustomerId     String?
+  stripeSubscriptionId String?
+  status               String
+  periodStart          String?
+  periodEnd            String?
+  trialStart           String?
+  trialEnd             String?
+  cancelAtPeriodEnd    Boolean?
+  seats                Int?
+  organizationId       String?
+
+  organization         organization? @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+}
+
+model ssoProvider {
+  id            String   @id @default(uuid())
+  issuer        String
+  oidcConfig    String?
+  samlConfig    String?
+  userId        String
+  providerId    String   @unique
+  organizationId String?
+  domain        String
+
+  user          user         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  organization  organization? @relation(fields: [organizationId], references: [id])
+}
+
+model deviceCode {
+  id              String    @id @default(uuid())
+  deviceCode      String
+  userCode        String
+  userId          String?
+  expiresAt       String
+  status          String
+  lastPolledAt    String?
+  pollingInterval Int?
+  clientId        String?
+  scope           String?
+
+  user            user?     @relation(fields: [userId], references: [id])
+}
+
+// Extended models for sports management
+
+model group {
+  id             String   @id @default(uuid())
+  name           String
+  category       String
+  coachId        String
+  organizationId String
+  createdAt      DateTime    @default(now())
+
+  coach          user         @relation("coach", fields: [coachId], references: [id], onDelete: Cascade)
+  organization   organization @relation("organization", fields: [organizationId], references: [id], onDelete: Cascade)
+  groupMembers   group_member[]
+  sessionGroups  session_group[]
+}
+
+model sports_member {
+  id             String   @id @default(uuid())
+  firstName      String
+  lastName       String
+  fatherName     String
+  motherFullName String
+  bloodType      String
+  educationLevel String
+  schoolName     String
+  fatherPhone    String
+  category       String
+  nationalId     String
+  idCardNumber   String
+  address        String
+  photoUrl       String?
+  role           String
+  organizationId String?
+  createdAt      DateTime    @default(now())
+  isActive       Boolean  @default(true)
+  organization   organization? @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  groupMembers   group_member[]
+  attendances    attendance[]
+}
+
+model group_member {
+  
+  groupId   String
+  memberId  String
+  startDate DateTime    @default(now())
+  endDate   String?
+
+  group     group         @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  member    sports_member @relation(fields: [memberId], references: [id], onDelete: Cascade)
+
+  @@id([groupId, memberId])
+}
+
+model training_session {
+  id          String   @id @default(uuid())
+  date        DateTime    @default(now())
+  startTime   String
+  endTime     String
+  description String?
+  location    String?
+  createdAt   DateTime    @default(now())
+  organizationId String
+
+  organization   organization @relation(fields: [organizationId], references: [id])
+  sessionGroups session_group[]
+  attendances   attendance[]
+}
+
+model session_group {
+  sessionId String
+  groupId   String
+
+  session   training_session @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  group     group            @relation(fields: [groupId], references: [id], onDelete: Cascade)
+
+  @@id([sessionId, groupId])
+}
+
+model attendance {
+  id        String   @id @default(uuid())
+  sessionId String
+  memberId  String
+  status    String
+  notes     String?
+  createdAt DateTime   @default(now())
+
+  session   training_session @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  member    sports_member    @relation(fields: [memberId], references: [id], onDelete: Cascade)
+}
