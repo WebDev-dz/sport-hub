@@ -7,9 +7,9 @@ import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
 type Props = {
-  params: {
+  params: Promise<{
     org: string;
-  };
+  }>;
 };
 
 const AttendanceCheckInPage: React.FC<Props> = async ({ params }) => {

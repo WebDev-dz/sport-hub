@@ -11,9 +11,9 @@ import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 type Props = {
-  params: {
-    org: string
-  }
+    params: Promise<{
+        org: string
+    }>
 }
 
 const NewCoachPage: React.FC<Props> = async ({ params }) => {

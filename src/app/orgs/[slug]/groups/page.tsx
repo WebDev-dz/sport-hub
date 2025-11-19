@@ -38,13 +38,13 @@ import {
 import Link from 'next/link'
 
 type Props = {
-    params: {
+    params: Promise<{ 
         org: string
-    }
+    }>
 }
 
 const GroupsPage: React.FC<Props> = async ({ params }) => {
-  const orgSlug = params.org
+  const orgSlug = (await params).org
 
   const session = await auth()
   if (!session) {

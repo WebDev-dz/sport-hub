@@ -3,9 +3,9 @@ import prisma from '@/lib/prisma'
 import NewGroupView from './view'
 
 type Props = {
-  params: {
+  params: Promise<{
     org: string
-  }
+  }>
 }
 
 const NewGroupPage = async ({ params }: Props) => {

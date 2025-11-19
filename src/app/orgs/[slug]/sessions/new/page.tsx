@@ -10,9 +10,9 @@ import Link from "next/link";
 import NewTrainingSessionView from "./view";
 
 type Props = {
-  params: {
+  params: Promise<{
     org: string;
-  };
+  }>;
 };
 
 const NewSessionPage: React.FC<Props> = async ({ params }) => {

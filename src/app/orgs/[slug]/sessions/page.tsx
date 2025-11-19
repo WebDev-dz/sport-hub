@@ -37,9 +37,9 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 type Props = {
-    params: {
+    params: Promise<{
         org: string
-    },
+    }>,
     searchParams: {
         page: string
         limit: string

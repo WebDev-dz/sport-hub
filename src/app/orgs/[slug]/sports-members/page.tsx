@@ -38,9 +38,9 @@ import Link from 'next/link'
 import { auth } from '@clerk/nextjs/server'
 
 type Props = {
-    params: {
+    params: Promise<{
         org: string
-    }
+    }>
 }
 
 const MembersPage: React.FC<Props> = async ({ params  }) => {

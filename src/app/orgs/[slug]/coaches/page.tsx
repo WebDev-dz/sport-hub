@@ -37,9 +37,9 @@ import {
 import Link from 'next/link'
 
 type Props = {
-    params: {
+    params: Promise<{
         org: string
-    }
+    }>
 }
 
 const CoachesPage: React.FC<Props> = async ({ params }) => {

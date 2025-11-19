@@ -41,9 +41,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 type Props = {
-  params: {
+  params: Promise<{
     org: string;
-  };
+  }>;
   searchParams: {
     page: string;
     limit: string;
@@ -52,7 +52,7 @@ type Props = {
 };
 
 const PlayersPage: React.FC<Props> = async ({ params, searchParams }) => {
-  const { org } = params;
+  const { org } = await params;
   const { page = "1", limit = "10", search = "" } = searchParams;
 
   const session = await auth();

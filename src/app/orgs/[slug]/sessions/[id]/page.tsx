@@ -29,10 +29,10 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
 type Props = {
-  params: {
+  params: Promise<{
     org: string
     id: string
-  }
+  }>
 }
 
 const SessionDetailsPage: React.FC<Props> = async ({ params }) => {

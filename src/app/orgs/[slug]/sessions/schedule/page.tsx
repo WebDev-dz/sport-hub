@@ -21,9 +21,9 @@ import { TCalendarView } from "@/components/calendar/types";
 import { auth } from "@clerk/nextjs/server";
 
 type Props = {
-  params: {
+  params: Promise<{
     org: string;
-  };
+  }>;
   searchParams: {
     search?: string;
     view?: TCalendarView;

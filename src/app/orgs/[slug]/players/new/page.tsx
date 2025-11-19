@@ -3,9 +3,9 @@ import prisma from '@/lib/prisma'
 import NewPlayerView from './view'
 
 type Props = {
-  params: {
+  params: Promise<{
     org: string
-  }
+  }>
 }
 
 const NewPlayerPage = async ( { params }: Props) => {

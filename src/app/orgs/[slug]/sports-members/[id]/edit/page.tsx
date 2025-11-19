@@ -18,10 +18,10 @@ import { ArrowLeft, Save, User, Phone, School, IdCard, MapPin, Droplet } from 'l
 import Link from 'next/link'
 
 type Props = {
-  params: {
+  params: Promise<{
     org: string
     id: string
-  }
+  }>
 }
 
 const EditMemberPage: React.FC<Props> = async ({ params }) => {
