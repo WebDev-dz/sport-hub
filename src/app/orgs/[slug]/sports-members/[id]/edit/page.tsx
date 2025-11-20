@@ -132,7 +132,7 @@ const EditMemberPage: React.FC<Props> = async ({ params }) => {
         </Link>
         <h1 className="text-3xl font-bold tracking-tight">Edit Member</h1>
         <p className="text-muted-foreground mt-1">
-          Update {member.firstName} {member.lastName}&rsquo;s information
+          Update {member.firstName} {member.lastName}'s information
         </p>
       </div>
 
@@ -175,7 +175,7 @@ const EditMemberPage: React.FC<Props> = async ({ params }) => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="fatherName">Father&rsquo;s Name *</Label>
+                  <Label htmlFor="fatherName">Father's Name *</Label>
                   <Input
                     id="fatherName"
                     name="fatherName"
@@ -184,7 +184,7 @@ const EditMemberPage: React.FC<Props> = async ({ params }) => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="motherFullName">Mother&rsquo;s Full Name *</Label>
+                  <Label htmlFor="motherFullName">Mother's Full Name *</Label>
                   <Input
                     id="motherFullName"
                     name="motherFullName"
@@ -302,7 +302,7 @@ const EditMemberPage: React.FC<Props> = async ({ params }) => {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="fatherPhone">Father&rsquo;s Phone *</Label>
+                <Label htmlFor="fatherPhone">Father's Phone *</Label>
                 <Input
                   id="fatherPhone"
                   name="fatherPhone"
@@ -369,7 +369,7 @@ const EditMemberPage: React.FC<Props> = async ({ params }) => {
               <CardHeader>
                 <CardTitle>Current Groups</CardTitle>
                 <CardDescription>
-                  Groups are managed separately. Go to the member&rsquo;s detail page to modify groups.
+                  Groups are managed separately. Go to the member's detail page to modify groups.
                 </CardDescription>
               </CardHeader>
               <CardContent>

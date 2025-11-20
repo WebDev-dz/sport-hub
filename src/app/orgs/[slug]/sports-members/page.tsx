@@ -113,7 +113,7 @@ const MembersPage: React.FC<Props> = async ({ params  }) => {
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Sports Members</h1>
           <p className="text-muted-foreground mt-1">
-            Manage your organization&rsquo;s athletes and their information
+            Manage your organization's athletes and their information
           </p>
         </div>
         <Link href={`/${organization.slug}/sports-members/new`}>

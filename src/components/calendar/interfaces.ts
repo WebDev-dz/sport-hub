@@ -40,9 +40,3 @@ export interface IUser {
 }
 
 export type TCalendarView = 'month' | 'week' | 'day' | 'agenda'
-
-export interface ICalendarCell {
-  day: number
-  currentMonth: boolean
-  date: Date
-}

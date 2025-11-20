@@ -180,9 +180,9 @@ export function getCalendarCells(selectedDate: Date): ICalendarCell[] {
 }
 
 export function calculateMonthEventPositions(
-    multiDayEvents: IEvent[],
-    singleDayEvents: IEvent[],
-    selectedDate: Date,
+	multiDayEvents: IEvent[],
+	singleDayEvents: IEvent[],
+	selectedDate: Date,
 ): Record<string, number> {
 	const monthStart = startOfMonth(selectedDate);
 	const monthEnd = endOfMonth(selectedDate);
@@ -194,24 +194,34 @@ export function calculateMonthEventPositions(
 		occupiedPositions[day.toISOString()] = [false, false, false];
 	});
 
-    const sortedEvents = [
-        ...multiDayEvents.sort((a, b) => {
-            const aDuration = differenceInDays(a.end, a.start);
-            const bDuration = differenceInDays(b.end, b.start);
-            return (
-                bDuration - aDuration || a.start.getTime() - b.start.getTime()
-            );
-        }),
-        ...singleDayEvents.sort((a, b) => a.start.getTime() - b.start.getTime()),
-    ];
+	const sortedEvents = [
+		...multiDayEvents.sort((a, b) => {
+			const aDuration = differenceInDays(
+				parseISO(a.endDate),
+				parseISO(a.startDate),
+			);
+			const bDuration = differenceInDays(
+				parseISO(b.endDate),
+				parseISO(b.startDate),
+			);
+			return (
+				bDuration - aDuration ||
+				parseISO(a.startDate).getTime() - parseISO(b.startDate).getTime()
+			);
+		}),
+		...singleDayEvents.sort(
+			(a, b) =>
+				parseISO(a.startDate).getTime() - parseISO(b.startDate).getTime(),
+		),
+	];
 
-    sortedEvents.forEach((event) => {
-        const eventStart = event.start;
-        const eventEnd = event.end;
-        const eventDays = eachDayOfInterval({
-            start: eventStart < monthStart ? monthStart : eventStart,
-            end: eventEnd > monthEnd ? monthEnd : eventEnd,
-        });
+	sortedEvents.forEach((event) => {
+		const eventStart = parseISO(event.start);
+		const eventEnd = parseISO(event.end);
+		const eventDays = eachDayOfInterval({
+			start: eventStart < monthStart ? monthStart : eventStart,
+			end: eventEnd > monthEnd ? monthEnd : eventEnd,
+		});
 
 		let position = -1;
 
@@ -245,15 +255,15 @@ export function getMonthCellEvents(
 	eventPositions: Record<string, number>,
 ) {
 	const dayStart = startOfDay(date);
-    const eventsForDate = events.filter((event) => {
-        const eventStart = event.start;
-        const eventEnd = event.end;
-        return (
-            (dayStart >= eventStart && dayStart <= eventEnd) ||
-            isSameDay(dayStart, eventStart) ||
-            isSameDay(dayStart, eventEnd)
-        );
-    });
+	const eventsForDate = events.filter((event) => {
+		const eventStart = parseISO(event.start);
+		const eventEnd = parseISO(event.end);
+		return (
+			(dayStart >= eventStart && dayStart <= eventEnd) ||
+			isSameDay(dayStart, eventStart) ||
+			isSameDay(dayStart, eventEnd)
+		);
+	});
 
 	return eventsForDate
 		.map((event) => ({
@@ -292,8 +302,8 @@ export const getEventsForDay = (
 	const targetDate = startOfDay(date);
 	return events
 		.filter((event) => {
-            const startOfDayForEventStart = startOfDay(event.start);
-            const startOfDayForEventEnd = startOfDay(event.end);
+			const startOfDayForEventStart = startOfDay(parseISO(event.start));
+			const startOfDayForEventEnd = startOfDay(parseISO(event.end));
 			if (isWeek) {
 				return (
 					event.start !== event.end &&
@@ -307,8 +317,8 @@ export const getEventsForDay = (
 			);
 		})
 		.map((event) => {
-            const eventStart = startOfDay(event.start);
-            const eventEnd = startOfDay(event.end);
+			const eventStart = startOfDay(parseISO(event.start));
+			const eventEnd = startOfDay(parseISO(event.end));
 			let point: "start" | "end" | "none" | undefined;
 
 			if (isSameDay(eventStart, eventEnd)) {
@@ -333,32 +343,32 @@ export const getEventsForWeek = (events: IEvent[], date: Date): IEvent[] => {
 	const startOfWeekDate = weekDates[0];
 	const endOfWeekDate = weekDates[6];
 
-    return events.filter((event) => {
-        const eventStart = event.start;
-        const eventEnd = event.end;
-        return (
-            isValid(eventStart) &&
-            isValid(eventEnd) &&
-            eventStart <= endOfWeekDate &&
-            eventEnd >= startOfWeekDate
-        );
-    });
+	return events.filter((event) => {
+		const eventStart = parseISO(event.start);
+		const eventEnd = parseISO(event.end);
+		return (
+			isValid(eventStart) &&
+			isValid(eventEnd) &&
+			eventStart <= endOfWeekDate &&
+			eventEnd >= startOfWeekDate
+		);
+	});
 };
 
 export const getEventsForMonth = (events: IEvent[], date: Date): IEvent[] => {
 	const startOfMonthDate = startOfMonth(date);
 	const endOfMonthDate = endOfMonth(date);
 
-    return events.filter((event) => {
-        const eventStart = event.start;
-        const eventEnd = event.end;
-        return (
-            isValid(eventStart) &&
-            isValid(eventEnd) &&
-            eventStart <= endOfMonthDate &&
-            eventEnd >= startOfMonthDate
-        );
-    });
+	return events.filter((event) => {
+		const eventStart = parseISO(event.start);
+		const eventEnd = parseISO(event.end);
+		return (
+			isValid(eventStart) &&
+			isValid(eventEnd) &&
+			eventStart <= endOfMonthDate &&
+			eventEnd >= startOfMonthDate
+		);
+	});
 };
 
 export const getEventsForYear = (events: IEvent[], date: Date): IEvent[] => {
@@ -367,16 +377,16 @@ export const getEventsForYear = (events: IEvent[], date: Date): IEvent[] => {
 	const startOfYearDate = startOfYear(date);
 	const endOfYearDate = endOfYear(date);
 
-    return events.filter((event) => {
-        const eventStart = event.start;
-        const eventEnd = event.end;
-        return (
-            isValid(eventStart) &&
-            isValid(eventEnd) &&
-            eventStart <= endOfYearDate &&
-            eventEnd >= startOfYearDate
-        );
-    });
+	return events.filter((event) => {
+		const eventStart = parseISO(event.start);
+		const eventEnd = parseISO(event.end);
+		return (
+			isValid(eventStart) &&
+			isValid(eventEnd) &&
+			eventStart <= endOfYearDate &&
+			eventEnd >= startOfYearDate
+		);
+	});
 };
 
 export const getColorClass = (color: string): string => {
