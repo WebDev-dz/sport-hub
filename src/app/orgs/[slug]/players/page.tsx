@@ -42,7 +42,7 @@ import { notFound } from "next/navigation";
 
 type Props = {
   params: Promise<{
-    org: string;
+    slug: string;
   }>;
   searchParams: Promise<{
     page: string;
@@ -52,24 +52,27 @@ type Props = {
 };
 
 const PlayersPage: React.FC<Props> = async ({ params, searchParams }) => {
-  const { org } = await params;
+  const { slug } = await params;
   const { page = "1", limit = "10", search = "" } = await searchParams;
+
+
 
   const session = await auth();
   if (!session) {
     return redirect("/sign-in");
   }
 
+
   const organization = await prisma.organization.findUnique({
     where: {
-      slug: org,
+      slug: slug,
     },
   });
 
   if (!organization) {
     notFound();
   }
-
+  
   const member = await prisma.member.findFirst({
     where: {
       userId: session.userId!,

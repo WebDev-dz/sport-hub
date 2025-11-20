@@ -9,7 +9,7 @@ type Props = {
     org: Organization
 };
 
-const NewPlayerView = ({ org }: Props) => {
+const NewPlayerView = ({ slug }: Props) => {
   const { createPlayerState } = usePlayers();
 
   useEffect(() => {

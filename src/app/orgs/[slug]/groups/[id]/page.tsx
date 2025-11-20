@@ -2,7 +2,7 @@ import React from 'react'
 
 type Props = {
   params: Promise<{
-    org: string
+    slug: string
     id: string
   }>
 }

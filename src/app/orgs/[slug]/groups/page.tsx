@@ -39,7 +39,7 @@ import Link from 'next/link'
 
 type Props = {
     params: Promise<{ 
-        org: string
+        slug: string
     }>
 }
 
@@ -52,7 +52,7 @@ const GroupsPage: React.FC<Props> = async ({ params }) => {
   }
 
   const organization = await prisma.organization.findUnique({
-    where: { slug: orgSlug },
+    where: { slugSlug },
   })
 
   if (!organization) {

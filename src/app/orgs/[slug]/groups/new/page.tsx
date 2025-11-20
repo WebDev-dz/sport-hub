@@ -4,15 +4,15 @@ import NewGroupView from './view'
 
 type Props = {
   params: Promise<{
-    org: string
+    slug: string
   }>
 }
 
 const NewGroupPage = async ({ params }: Props) => {
-  const { org } = await params
+  const { slug } = await params
   const organization = await prisma.organization.findUnique({
     where: {
-      slug: org
+      slug
     }
   })
 

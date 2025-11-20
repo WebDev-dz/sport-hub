@@ -12,13 +12,13 @@ import Link from 'next/link'
 
 type Props = {
     params: Promise<{
-        org: string
+        slug: string
     }>
 }
 
 const NewCoachPage: React.FC<Props> = async ({ params }) => {
 
-  const { org } = await params
+  const { slug } = await params
   const session = await auth()
   if (!session) {
     return redirect('/sign-in')
@@ -26,7 +26,7 @@ const NewCoachPage: React.FC<Props> = async ({ params }) => {
 
   const organization = await prisma.organization.findUnique({
     where: {
-      slug: org
+      slug
     }
   })
 

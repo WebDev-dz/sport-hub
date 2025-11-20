@@ -22,7 +22,7 @@ import { auth } from "@clerk/nextjs/server";
 
 type Props = {
   params: Promise<{
-    org: string;
+    slug: string;
   }>;
   searchParams: Promise<{
     search?: string;
@@ -34,7 +34,7 @@ type Props = {
 };
 
 const SessionsPage: React.FC<Props> = async ({ params, searchParams }) => {
-  const { org } = await params;
+  const { slug } = await params;
   const { 
     search = "", 
     view = "month",
@@ -47,7 +47,7 @@ const SessionsPage: React.FC<Props> = async ({ params, searchParams }) => {
 
   const organization = await prisma.organization.findUnique({
     where: {
-      slug: org,
+      slug,
     },
   });
 

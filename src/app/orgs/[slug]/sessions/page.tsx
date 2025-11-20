@@ -38,7 +38,7 @@ import { notFound } from 'next/navigation'
 
 type Props = {
     params: Promise<{
-        org: string
+        slug: string
     }>,
     searchParams: Promise<{
         page: string
@@ -49,14 +49,14 @@ type Props = {
 
 const SessionsPage: React.FC<Props> = async ({ params, searchParams }) => {
 
-  const { org } = await params  
+  const { slug } = await params  
   const { page = '1', limit = '10', search = '' } = await searchParams
   
   
 
   const organization = await prisma.organization.findUnique({
     where: {
-      slug: org
+      slug
     }
   })
 

@@ -11,17 +11,17 @@ import NewTrainingSessionView from "./view";
 
 type Props = {
   params: Promise<{
-    org: string;
+    slug: string;
   }>;
 };
 
 const NewSessionPage: React.FC<Props> = async ({ params }) => {
-  const { org } = await params;
+  const { slug } = await params;
   
 
   const organization = await prisma.organization.findUnique({
     where: {
-      slug: org,
+      slug,
     },
   });
 

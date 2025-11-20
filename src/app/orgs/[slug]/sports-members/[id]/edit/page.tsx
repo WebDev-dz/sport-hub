@@ -19,7 +19,7 @@ import Link from 'next/link'
 
 type Props = {
   params: Promise<{
-    org: string
+    slug: string
     id: string
   }>
 }
@@ -30,7 +30,7 @@ const EditMemberPage: React.FC<Props> = async ({ params }) => {
   const [organization, member] = await Promise.all([
     prisma.organization.findUnique({
         where: {
-            slug: org
+            slug
         }
     }),
     prisma.sports_member.findUnique({

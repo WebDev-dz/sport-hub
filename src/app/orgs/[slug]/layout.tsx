@@ -13,9 +13,9 @@ export default async function PageLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ org: string }>;
+  params: Promise<{ slug: string }>;
 }) {
-  const { org } = await params;
+  const { slug } = await params;
   const clerkAuth = await auth()
   const userId = clerkAuth.userId
   if (!userId) {

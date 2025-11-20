@@ -38,18 +38,18 @@ import Link from 'next/link'
 
 type Props = {
     params: Promise<{
-        org: string
+        slug: string
     }>
 }
 
 const CoachesPage: React.FC<Props> = async ({ params }) => {
 
-  const { org } = await params  
+  const { slug } = await params  
   
  
   const organization = await prisma.organization.findUnique({
     where: {
-      slug: org
+      slug
     }
   })
 

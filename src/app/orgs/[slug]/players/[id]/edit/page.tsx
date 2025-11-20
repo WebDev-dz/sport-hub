@@ -4,7 +4,7 @@ import prisma from '@/lib/prisma';
 
 type Props = {
   params: Promise<{
-    org: string
+    slug: string
     id: string
   }>
 }
@@ -13,7 +13,7 @@ const PlayerEditPage = async ({ params }: Props) => {
   const { org, id } = await params
   const organization = await prisma.organization.findUnique({
     where: {
-      slug: org
+      slug
     }
   })
   if (!organization) {
