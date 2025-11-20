@@ -69,6 +69,8 @@ const PlayersPage: React.FC<Props> = async ({ params, searchParams }) => {
     },
   });
 
+  console.log({organization})
+
   if (!organization) {
     notFound();
   }
