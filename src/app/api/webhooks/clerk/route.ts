@@ -1,11 +1,10 @@
-// api/webhooks/clerk/route.ts
 import { verifyWebhook } from '@clerk/nextjs/webhooks'
 import { NextRequest, NextResponse } from 'next/server'
 import { createUser, deleteUser, updateUser } from './controllers/user.controller'
 import { createOrganization, deleteOrganization, updateOrganization } from './controllers/organization.controller'
 import { createSession, deleteSession, updateSession } from './controllers/session.controller'
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function POST(req: NextRequest) {
   try {
     console.log('Received webhook request')
     const evt = await verifyWebhook(req)
@@ -15,11 +14,9 @@ export async function POST(req: NextRequest, res: NextResponse) {
     console.log(`Received webhook with ID ${id} and event type of ${eventType}`)
 
     if (eventType === 'user.created') {
-      // Sync user creation
       const clerkUser = evt.data
       await createUser(clerkUser)
     } else if (eventType === 'user.updated') {
-      // Sync user update
       const clerkUser = evt.data
       await updateUser(clerkUser)
     } else if (eventType === 'user.deleted') {
@@ -37,12 +34,10 @@ export async function POST(req: NextRequest, res: NextResponse) {
     } else if (eventType === 'session.created') {
       const session = evt.data
       await createSession(session)
-    }  else if (eventType === 'session.ended') {
+    } else if (eventType === 'session.ended') {
       const session = evt.data
       await deleteSession(session.id!)
     }
-
-    
 
     return NextResponse.json({ success: true }, { status: 200 })
   } catch (err) {
